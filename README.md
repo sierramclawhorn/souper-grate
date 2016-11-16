@@ -4,10 +4,10 @@
 
 
 ### Team: 
-      Nathan Herrera (nathanjh),
-      Christine Casebolt (christinec01),
-      Tim Tao (timctao),
-      Sierra McLawhorn (sierramclawhorn)
+  * Nathan Herrera (nathanjh),
+  * Christine Casebolt (christinec01),
+  * Tim Tao (timctao),
+  * Sierra McLawhorn (sierramclawhorn)
 
 
 ### Project Description: 
@@ -15,12 +15,12 @@
 
 
 ### How to install code locally:
-  update ruby version to 2.3.1
-  gem install rails
-  update rails version to 5.0.0.1
-  fork repo
-  clone repo
-  bundle install
+  * update ruby version to 2.3.1
+  * gem install rails
+  * update rails version to 5.0.0.1
+  * fork repo
+  * clone repo
+  * bundle install
 
 
 ### How to use the app:
