@@ -1,12 +1,12 @@
 # README
 
-Name of Project: Souper Grate
+Name of Project: ** Souper Grate **
 
 
 Team: 
-      Nathan Herrera (nathanjh)
-      Christine Casebolt (christinec01)
-      Tim Tao (timctao)
+      Nathan Herrera (nathanjh),
+      Christine Casebolt (christinec01),
+      Tim Tao (timctao),
       Sierra McLawhorn (sierramclawhorn)
 
 
