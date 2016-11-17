@@ -20,7 +20,10 @@ Created by: <%= @recipe.user.username %>
   <%= @recipe.instructions %>
 </p>
 
-
+<p>
+  Rating: 
+  <%= @recipe.rating_average %>
+</p>
   
 <div class="rate">
   <%= render 'ratings/rate' %>
