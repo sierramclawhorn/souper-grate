@@ -1,5 +1,7 @@
 <h1> Courses </h1>
 
+<!-- add link for creating new recipe if logged in -->
+
 <% @categories.each do |category| %>
   <p><%= link_to "#{ category.name }", category_path(category) %></p>
     <% if category.recipes.count > 0 %>
