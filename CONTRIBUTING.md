@@ -13,6 +13,7 @@ Code review workflow:
   - Copy code onto local to check for errors
   - Add github comments where necessary for fixes, suggestions, or questions
   - Merge ONLY if everything is working/passing 
+  - Delete branch after merging 
 
 
 Code style:
