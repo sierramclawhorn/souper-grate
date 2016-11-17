@@ -1,1 +1,7 @@
-<h1> Categories Show </h1>
+<h1><%= @category.name %></h1>
+
+<% if @category.recipes.count > 0 %>
+  <ul>
+    <%= render partial: 'recipe', collection: @category.recipes, locals: { category: @category } %>
+  </ul>
+<% end %>
