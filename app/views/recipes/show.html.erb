@@ -1,0 +1,21 @@
+<h1><%= @recipe.name %></h1>
+
+Created by: <%= @recipe.user.username %>
+
+<h2>Description</h2>
+<p>
+  <%= @recipe.description %>
+</p><br>
+
+<p>
+  Prep Time: <%= @recipe.prep_time %> min
+</p>
+
+<p>
+  Difficulty Rating: <%= @recipe.difficulty_level %>
+</p><br>
+
+<h2>Directions</h2>
+<p>
+  <%= @recipe.instructions %>
+</p>
