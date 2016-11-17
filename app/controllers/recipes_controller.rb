@@ -13,6 +13,8 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @category = Category.find(params[:category_id])
+    @recipe = @category.recipes.find(params[:id])
   end
 
   def create
