@@ -4,7 +4,7 @@
   <%= link_to "#{ category.name }", category_path(category) %>
   <ul>
     <li>
-      <%= link_to "#{ @recipe.name }" %>, category_recipe_path(category, @recipe) 
+      <%= render partial: 'recipe', collection: @recipes, locals: { category: category } %> 
     </li>
   </ul>
 <% end %>
