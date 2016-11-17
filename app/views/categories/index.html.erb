@@ -3,9 +3,15 @@
 <% @categories.each do |category| %>
   <p><%= link_to "#{ category.name }", category_path(category) %></p>
     <% if category.recipes.count > 0 %>
-      <ul>
-          <%= render partial: 'recipe', collection: category.recipes[-5..-1], locals: { category:category } %>
+      <% if category.recipes.count >= 5 %>
+        <ul>
+            <%= render partial: 'recipe', collection:   category.recipes[-5..-1], locals: {   category:category } %>
+        </ul>
+      <% else %>
+        <ul>
+          <%= render partial: 'recipe', collection: category.recipes, locals: { category:category } %>
       </ul>
+      <% end %>
     <% end %>
 <% end %>
 
