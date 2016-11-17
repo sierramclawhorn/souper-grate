@@ -5,31 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Category.destroy_all
+Recipe.destroy_all
+User.destroy_all
 
 
-# Seeding for Categories:
 categories = Category.create([
   { name: 'Appetizers'},
   { name: 'Desserts'},
   { name: 'Main Courses'},
   { name: 'Soups & Salads'}
-  ])
-
-recipes = Recipe.create([
-  { name: 'Parsnip Soup',
-    description: 'A recipe from the ancestors of Maxwell Mathews',
-    instructions: 'take a parsnip & put it in some soup',
-    user_id: 1,
-    category_id: 4,
-    prep_time: 20,
-    difficulty_level: 2 },
-  { name: 'Garlic Potato Sticks',
-    description: 'Fries with garlic',
-    instructions: 'cut the potato, do the garlic things',
-    user_id: 3,
-    category_id: 4,
-    prep_time: 34,
-    difficulty_level: 3 }
   ])
 
 users = User.create([
@@ -48,4 +33,21 @@ users = User.create([
     last_name: 'LivingOnBernalHill',
     email: 'coyote@bestcohortever.com',
     password: 'coyotedude' }
+  ])
+
+recipes = Recipe.create([
+  { name: 'Parsnip Soup',
+    description: 'A recipe from the ancestors of Maxwell Mathews',
+    instructions: 'take a parsnip & put it in some soup',
+    user_id: 1,
+    category_id: 4,
+    prep_time: 20,
+    difficulty_level: 2 },
+  { name: 'Garlic Potato Sticks',
+    description: 'Fries with garlic',
+    instructions: 'cut the potato, do the garlic things',
+    user_id: 2,
+    category_id: 1,
+    prep_time: 34,
+    difficulty_level: 3 }
   ])
