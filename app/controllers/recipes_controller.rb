@@ -24,5 +24,10 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    @category = Category.find(params[:category_id])
+    @recipe = @category.recipes.find(params[:id])
+    @recipe.destroy
+
+    redirect_to category_path
   end
 end
