@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
   def show
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.find(params[:id])
+    @rating = Rating.new
   end
 
   def new
@@ -56,4 +57,5 @@ class RecipesController < ApplicationController
                                    :prep_time,
                                    :difficulty_level)
   end
+
 end

@@ -69,7 +69,7 @@ recipes = Recipe.create([
     instructions: 'unwrap the butter',
     user_id: 2,
     category_id: 1,
-    prep_time: 0,
+    prep_time: 1,
     difficulty_level: 1 },
   { name: 'Kale Chips',
     description: 'crispy kale chips of deliciousness',

@@ -1,0 +1,10 @@
+<%= form_for [@category, @recipe, @rating] do |f| %>
+
+  <p>
+    <%= f.select :rating, [1, 2, 3, 4, 5], :promt => 'Select a Rating' %>
+
+    <%= f.submit 'Rate this recipe' %>
+  </p>
+
+ 
+<% end %>
