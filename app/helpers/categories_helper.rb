@@ -1,2 +1,2 @@
-module CategoriesControllerHelper
+module CategoriesHelper
 end
