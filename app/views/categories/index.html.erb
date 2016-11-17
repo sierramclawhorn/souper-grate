@@ -2,7 +2,27 @@
 
 <% @categories.each do |category| %>
   <p><%= link_to "#{ category.name }", category_path(category) %></p>
-    <% if category.recipes.count > 0 %>
+    <% if category.recipes.first %>
+      <ul>
+          <%= render partial: 'recipe', collection: category.recipes, locals: { category:category } %>
+      </ul>
+    <% end %>
+    <% if category.recipes.second %>
+      <ul>
+          <%= render partial: 'recipe', collection: category.recipes, locals: { category:category } %>
+      </ul>
+    <% end %>
+    <% if category.recipes.third %>
+      <ul>
+          <%= render partial: 'recipe', collection: category.recipes, locals: { category:category } %>
+      </ul>
+    <% end %>
+    <% if category.recipes.fourth %>
+      <ul>
+          <%= render partial: 'recipe', collection: category.recipes, locals: { category:category } %>
+      </ul>
+    <% end %>
+    <% if category.recipes.fifth %>
       <ul>
           <%= render partial: 'recipe', collection: category.recipes, locals: { category:category } %>
       </ul>
