@@ -6,13 +6,6 @@ class RecipesController < ApplicationController
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.find(params[:id])
     @rating = Rating.new
-
-    if @rating.save
-      redirect_to category_recipe_path
-      flash[:notice] = 'Rating successfully saved.'
-    else
-      flash[:notice] = 'Unable to save rating.'
-    end
   end
 
   def new
