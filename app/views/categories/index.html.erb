@@ -4,9 +4,7 @@
   <p><%= link_to "#{ category.name }", category_path(category) %></p>
     <% if category.recipes.count > 0 %>
       <ul>
-        <li>
           <%= render partial: 'recipe', collection: category.recipes, locals: { category: category } %>
-        </li>
       </ul>
     <% end %>
 <% end %>
