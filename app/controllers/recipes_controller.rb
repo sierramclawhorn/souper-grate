@@ -8,6 +8,8 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @category = Category.find(params[:category_id])
+    @recipe = @category.recipes.new
   end
 
   def edit
