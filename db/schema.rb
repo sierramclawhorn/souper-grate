@@ -47,12 +47,14 @@ ActiveRecord::Schema.define(version: 20161117004132) do
     t.string   "name"
     t.text     "description"
     t.text     "instructions"
-    t.integer  "user_id"
-    t.integer  "category_id"
     t.integer  "prep_time"
     t.integer  "difficulty_level"
+    t.integer  "user_id"
+    t.integer  "category_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["category_id"], name: "index_recipes_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_recipes_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
