@@ -23,13 +23,21 @@ class RecipesController < ApplicationController
     @recipe.user_id = current_user.id
 
     if @recipe.save
-      redirect_to @category
+      redirect_to [@category, @recipe]
     else
       render 'new'
     end
   end
 
   def update
+    @category = Category.find(params[:category_id])
+    @recipe = @category.recipes.find(params[:id])
+
+    if @recipe.update(recipe_params)
+      redirect_to [@category, @recipe]
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -37,7 +45,7 @@ class RecipesController < ApplicationController
     @recipe = @category.recipes.find(params[:id])
     @recipe.destroy
 
-    redirect_to category_path
+    redirect_to @category
   end
 
   private
