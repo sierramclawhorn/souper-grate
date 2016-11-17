@@ -9,8 +9,8 @@
 
 # Seeding for Categories:
 categories = Category.create([
-  { name: 'appetizers'},
-  { name: 'desserts'},
-  { name: 'main courses'},
-  { name: 'soups & salads'}
+  { name: 'Appetizers'},
+  { name: 'Desserts'},
+  { name: 'Main Courses'},
+  { name: 'Soups & Salads'}
   ])
