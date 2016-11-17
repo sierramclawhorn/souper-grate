@@ -14,3 +14,31 @@ categories = Category.create([
   { name: 'Main Courses'},
   { name: 'Soups & Salads'}
   ])
+
+recipe = Recipe.create(
+  name: 'Parsnip Soup',
+  description: 'A recipe from the ancestors of Maxwell Mathews',
+  instructions: 'take a parsnip & put it in some soup',
+  user_id: 1,
+  category_id: 4,
+  prep_time: 20,
+  difficulty_level: 2
+  )
+
+users = User.create([
+  { username: 'Tomithy',
+    first_name: 'Tomithy',
+    last_name: 'Tao',
+    email: 'tt@tt.com',
+    password: 'tomithy' },
+  { username: 'KenjaminFranklin',
+    first_name: 'Ken',
+    last_name: 'Rhettberg',
+    email: 'kenjamin@hotmail.com',
+    password: 'ken' },
+  { username: 'coyote',
+    first_name: 'Coyote',
+    last_name: 'LivingOnBernalHill',
+    email: 'coyote@bestcohortever.com',
+    password: 'coyotedude' }
+  ])
