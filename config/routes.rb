@@ -3,4 +3,6 @@ resources :categories do
   resources :recipes
 end
 
+
+  root 'categories#index'
 end
