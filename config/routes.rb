@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
   resources :categories do
-    resources :recipes
+    resources :recipes do
+      resources :ratings
+    end
   end
-
-  resources :ratings
 
   resources :users
   get '/logout' => 'sessions#destroy'
