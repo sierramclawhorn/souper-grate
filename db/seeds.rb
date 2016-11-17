@@ -15,15 +15,22 @@ categories = Category.create([
   { name: 'Soups & Salads'}
   ])
 
-recipe = Recipe.create(
-  name: 'Parsnip Soup',
-  description: 'A recipe from the ancestors of Maxwell Mathews',
-  instructions: 'take a parsnip & put it in some soup',
-  user_id: 1,
-  category_id: 4,
-  prep_time: 20,
-  difficulty_level: 2
-  )
+recipes = Recipe.create([
+  { name: 'Parsnip Soup',
+    description: 'A recipe from the ancestors of Maxwell Mathews',
+    instructions: 'take a parsnip & put it in some soup',
+    user_id: 1,
+    category_id: 4,
+    prep_time: 20,
+    difficulty_level: 2 },
+  { name: 'Garlic Potato Sticks',
+    description: 'Fries with garlic',
+    instructions: 'cut the potato, do the garlic things',
+    user_id: 3,
+    category_id: 4,
+    prep_time: 34,
+    difficulty_level: 3 }
+  ])
 
 users = User.create([
   { username: 'Tomithy',
