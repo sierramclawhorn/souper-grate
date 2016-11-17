@@ -1,0 +1,25 @@
+<%= form_for ([@category, @recipe]) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :preparation_time %><br>
+    <%= f.text_field :prep_time %>
+  </p>
+  <p>
+    <%= f.label :difficulty_level %><br>
+    <%= f.text_field :difficulty_level %>
+  </p>
+  <p>
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
