@@ -38,4 +38,5 @@ class RecipesController < ApplicationController
 
     redirect_to category_path
   end
+
 end
