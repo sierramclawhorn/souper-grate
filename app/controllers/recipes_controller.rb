@@ -64,4 +64,5 @@ class RecipesController < ApplicationController
                                    :prep_time,
                                    :difficulty_level)
   end
+
 end
