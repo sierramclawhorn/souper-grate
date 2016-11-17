@@ -20,11 +20,10 @@ class RecipesController < ApplicationController
   def create
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.new(recipe_params)
-    # @recipe.category_id = params[:category_id]
-    # @recipe.user_id = current_user.id
+    @recipe.user_id = current_user.id
 
     if @recipe.save
-      rediect_to @category
+      redirect_to @category
     else
       render 'new'
     end
