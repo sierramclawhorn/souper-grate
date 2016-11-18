@@ -15,7 +15,15 @@
  */
 
 .banner-img {
+  display: block;
+  margin: auto;
   max-width: 50%;
   border: solid 1px black;
   border-radius: 38%;
+}
+
+.user-form {
+  display: block;
+  margin: auto;
+  text-align: center;
 }
