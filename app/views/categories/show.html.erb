@@ -1,0 +1,11 @@
+<%= link_to 'Create New Recipe', new_category_recipe_path(@category) %>
+
+
+<h1><%= @category.name %></h1>
+
+<% if @category.recipes.count > 0 %>
+  <ul>
+    <%= render partial: 'recipe', collection: @category.recipes, locals: { category: @category } %>
+  </ul>
+<% end %>
+

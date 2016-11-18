@@ -1,0 +1,51 @@
+<%= form_for [@category, @recipe], url: {action: 'create' } do |f| %>
+
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@recipe.errors.count, "error") %> prohibited
+        this recipe from being saved:
+      </h2>
+      <ul>
+        <% @recipe.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :preparation_time %><br>
+    <%= f.text_field :prep_time %>
+  </p>
+  <p>
+    <%= f.label :difficulty_level %><br>
+    <%= f.text_field :difficulty_level %>
+  </p>
+    <%= f.fields_for :quantities do |quantities_form| %>
+      <p>
+        <%= quantities_form.label :quantity %>
+        <%= quantities_form.text_field :quantity %>
+      </p>
+      <p>
+        <%= quantities_form.label :ingredient %>
+        <%= quantities_form.text_field :ingredient_name %>
+      </p>
+    <% end %>
+  <p>
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

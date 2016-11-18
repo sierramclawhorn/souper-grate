@@ -1,0 +1,20 @@
+<h1> Courses </h1>
+
+<!-- add link for creating new recipe if logged in -->
+
+<% @categories.each do |category| %>
+  <p><%= link_to "#{ category.name }", category_path(category) %></p>
+    <% if category.recipes.count > 0 %>
+      <% if category.recipes.count >= 5 %>
+        <ul>
+            <%= render partial: 'recipe', collection:   category.recipes[-5..-1], locals: {   category:category } %>
+        </ul>
+      <% else %>
+        <ul>
+          <%= render partial: 'recipe', collection: category.recipes, locals: { category:category } %>
+      </ul>
+      <% end %>
+    <% end %>
+<% end %>
+
+<!-- find a way to set limit for top 5 of each category when ratings are implemented -->
