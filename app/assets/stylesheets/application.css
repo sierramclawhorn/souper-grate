@@ -138,3 +138,16 @@ h2 a{
   list-style: none;
   margin-left: -40px;
 }
+
+
+/*RECIPE SHOW*/
+.recipe-show{
+  max-width: 75%;
+  margin: auto;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
+
+
