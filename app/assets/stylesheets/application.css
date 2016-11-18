@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.banner-img {
+  max-width: 50%;
+}
