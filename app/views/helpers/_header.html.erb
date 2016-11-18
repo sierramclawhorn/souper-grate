@@ -1,9 +1,7 @@
-
-
 <div class="user-form">
   <div id="user-links">
     <% if current_user %>
-    <%= link_to 'Home', root_path %> |  Signed in as <%= current_user.username %> | <%= link_to 'Logout', '/logout' %>
+    <%= link_to 'Home', root_path %> |  Signed in as <%= link_to current_user.username, "/users/#{current_user.id}" %> | <%= link_to 'Logout', '/logout' %>
     <% else %>
       <%= link_to 'Home', root_path %> | <%= link_to 'Login', '/login', class:"login", remote: true %> | <%= link_to 'Signup', '/users/new', class:"signup", remote: true %>
     <% end %>

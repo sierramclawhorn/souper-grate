@@ -19,10 +19,6 @@ class SessionsController < ApplicationController
   def destroy
     p "#"*20
     session[:user_id] = nil
-    # respond_to do |format|
-    #   format.js {}
-    #   format.html { redirect_to '/'}
-    # end
     redirect_to '/'
   end
 end
