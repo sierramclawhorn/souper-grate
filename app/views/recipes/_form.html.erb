@@ -31,15 +31,11 @@
     <%= f.label :difficulty_level %><br>
     <%= f.text_field :difficulty_level %>
   </p>
-    <%= f.fields_for :quantities do |quantities_form| %>
-      <%= link_to 'Add an ingredient!', '/add_ingredient', class:'quantities', remote: true %>
-      <!-- <%= render partial: 'add_ingredient', locals: { quantities_form: quantities_form } %> -->
-    <% end %>
   <p>
     <%= f.label :instructions %><br>
     <%= f.text_area :instructions %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Add ingredients!" %>
   </p>
 <% end %>

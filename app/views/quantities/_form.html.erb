@@ -1,0 +1,13 @@
+<p>
+<%= form_for @quantity, remote: true, class: 'foo', url:{action: "create"} do |quantities_form| %>
+<span>
+  <%= quantities_form.label :quantity %>
+  <%= quantities_form.text_field :quantity %>
+</span>
+<span>
+  <%= quantities_form.label :ingredient %>
+  <%= quantities_form.text_field :ingredient_name %>
+  </span>
+  <%= quantities_form.submit "Add ingredient" %>
+<% end %>
+</p>

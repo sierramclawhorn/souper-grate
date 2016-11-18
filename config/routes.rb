@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources:recipes do
+    resources:quantities
+  end
   resources :users
   get '/logout' => 'sessions#destroy'
   get '/login' => 'sessions#new'
