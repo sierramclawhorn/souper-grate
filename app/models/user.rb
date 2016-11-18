@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates_presence_of :username, :email
   validates_uniqueness_of :username, :email
 
-  has_many :recipies
+  has_many :recipes
   has_many :ratings
 
 end
