@@ -16,4 +16,6 @@
 
 .banner-img {
   max-width: 50%;
+  border: solid 1px black;
+  border-radius: 38%;
 }
