@@ -27,3 +27,59 @@
   margin: auto;
   text-align: center;
 }
+
+h1 {
+  text-shadow: .02em .04em .02em gray;
+}
+
+h2 a{
+  font-size: 1.7em;
+  color: maroon;
+  text-shadow: .02em .04em .02em white;
+}
+
+li a{
+  font-size: 1.3em;
+  color: black;
+  text-shadow: .02em .04em .02em white;
+}
+
+.courses{
+  margin: auto;
+  width: 60%;
+}
+
+.courses-header{
+  margin: 4%;
+  text-align: center;
+  margin-bottom: -5px;
+}
+
+.container{
+  position: relative;
+}
+
+.potato-img{
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+      box-sizing: border-box;
+}
+
+.category{
+  position: relative;
+  margin: auto;
+  margin-top: 20%;
+  margin-left: 30%;
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  width: 50%;
+  height: 220px;
+  overflow: auto; /*scrollbar*/
+  margin-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 3%;
+}
