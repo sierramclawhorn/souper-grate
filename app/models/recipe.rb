@@ -1,11 +1,14 @@
 class Recipe < ApplicationRecord
   belongs_to :user
   belongs_to :category
+
   has_many :ratings
   has_many :quantities
   has_many :ingredients, through: :quantities
 
-  validates :name, :description, :instructions, 
+  accepts_nested_attributes_for :quantities
+
+  validates :name, :description, :instructions,
             :user_id, :category_id, { presence: true }
 
   validates :difficulty_level, numericality: { greater_than_or_equal_to: 1,
@@ -13,4 +16,3 @@ class Recipe < ApplicationRecord
 
   validates :prep_time, numericality: { greater_than_or_equal_to: 1 }
 end
-

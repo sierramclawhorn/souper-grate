@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   def new
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.new
+    2.times { @recipe.quantities.build }
   end
 
   def edit
@@ -19,6 +20,9 @@ class RecipesController < ApplicationController
   end
 
   def create
+    # p '$' * 40
+    # p params
+    # p '$' * 40
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.new(recipe_params)
     @recipe.user_id = current_user.id
@@ -51,7 +55,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, 
+    params.require(:recipe).permit(:name,
                                    :description,
                                    :instructions,
                                    :prep_time,
