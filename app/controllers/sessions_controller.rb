@@ -11,13 +11,18 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       respond_to do |format|
         format.js {}
-        format.html { redirect_to '/'}
+        format.html { redirect_to '/' }
+      end
+    else
+      flash.now[:error] = 'Invalid user, brah!'
+      respond_to do |format|
+        format.html { render 'new' }
+        format.js
       end
     end
   end
 
   def destroy
-    p "#"*20
     session[:user_id] = nil
     redirect_to '/'
   end
