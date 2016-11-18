@@ -1,4 +1,4 @@
-<%= form_for [@category, @recipe], url: {action: 'create' } do |f| %>
+<%= form_for [@category, @recipe] do |f| %>
 
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -32,14 +32,8 @@
     <%= f.text_field :difficulty_level %>
   </p>
     <%= f.fields_for :quantities do |quantities_form| %>
-      <p>
-        <%= quantities_form.label :quantity %>
-        <%= quantities_form.text_field :quantity %>
-      </p>
-      <p>
-        <%= quantities_form.label :ingredient %>
-        <%= quantities_form.text_field :ingredient_name %>
-      </p>
+      <%= link_to 'Add an ingredient!', '/add_ingredient', class:'quantities', remote: true %>
+      <!-- <%= render partial: 'add_ingredient', locals: { quantities_form: quantities_form } %> -->
     <% end %>
   <p>
     <%= f.label :instructions %><br>

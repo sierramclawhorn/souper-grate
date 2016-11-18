@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   def new
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.new
-    2.times { @recipe.quantities.build }
+    1.times { @recipe.quantities.build }
   end
 
   def edit
