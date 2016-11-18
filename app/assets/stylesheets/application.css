@@ -17,7 +17,8 @@
 .banner-img {
   display: block;
   margin: auto;
-  max-width: 50%;
+  max-width: 40%;
+  min-width: 300px;
   border: solid 1px black;
   border-radius: 38%;
 }
@@ -109,5 +110,31 @@ h2 a{
 .profile li a{
   font-size: 1.1em;
   color: maroon;
-  text-shadow: .02em .04em .02em white;
+}
+
+
+/*CATEGORY SHOW*/
+.category-show{
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.create-recipe{
+  margin-bottom: 3%;
+}
+
+.category-name{
+  text-align: center;
+}
+
+.category-recipes a{
+  color: maroon;
+}
+
+.category-show ul{
+  list-style: none;
+  margin-left: -40px;
 }
