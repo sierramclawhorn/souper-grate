@@ -17,17 +17,24 @@ Created by: <%= @recipe.user.username %>
 
 <h2>Directions</h2>
 <p>
-  <%= @recipe.instructions %>
+  <%=raw @recipe.display_directions %>
 </p>
+
 
 <p>
   Rating: 
-  <%= @recipe.rating_average %>
+  <% if @recipe.ratings.count > 0 %>
+    <%= @recipe.rating_average %>
+  <% else %>
+    Be the first rate!
+  <% end %>
 </p>
-  
-<div class="rate">
-  <%= render 'ratings/rate' %>
-</div>
+
+<% if current_user %>
+  <div class="rate">
+    <%= render 'ratings/rate' %>
+  </div>
+<% end %>
 
 <% if current_user %> <!-- implement logic for matching current_user to creator of recipe -->
   <%= link_to 'Edit', edit_category_recipe_path(@category, @recipe) %>

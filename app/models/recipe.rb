@@ -23,5 +23,9 @@ class Recipe < ApplicationRecord
     avg.round(1)
   end
 
+  def display_directions
+    self.instructions.gsub(/\s*([.;\r\n]+|\s\s)\s*/, ".<br><br>")
+  end 
+
 
 end
