@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
   def new
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.new
-    2.times { @recipe.quantities.build }
+    1.times { @recipe.quantities.build }
   end
 
   def edit
@@ -20,15 +20,12 @@ class RecipesController < ApplicationController
   end
 
   def create
-    # p '$' * 40
-    # p params
-    # p '$' * 40
     @category = Category.find(params[:category_id])
     @recipe = @category.recipes.new(recipe_params)
     @recipe.user_id = current_user.id
 
     if @recipe.save
-      redirect_to [@category, @recipe]
+      redirect_to new_recipe_quantity_path(@recipe)
     else
       render 'new'
     end

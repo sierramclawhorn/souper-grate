@@ -1,0 +1,16 @@
+
+<p><h1> <%=@recipe.name %></h1></p>
+<br>
+<p>Recipe Description: <%=@recipe.description %></p>
+<br>
+<p>Prep Time: <%=@recipe.prep_time %></p>
+<br>
+<p>Difficulty Level: <%=@recipe.difficulty_level %></p>
+<div>
+  <ul class="ingredients-quantities">
+  </ul>
+</div>
+<div class="quantity-form">
+  <%= render "form" %>
+</div>
+<%=  link_to "Save Recipe!", "/categories/#{@recipe.category_id}/recipes/#{@recipe.id}" %>

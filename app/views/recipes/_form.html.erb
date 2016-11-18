@@ -1,4 +1,4 @@
-<%= form_for [@category, @recipe], url: {action: 'create' } do |f| %>
+<%= form_for [@category, @recipe] do |f| %>
 
   <% if @recipe.errors.any? %>
     <div id="error_explanation">
@@ -31,21 +31,11 @@
     <%= f.label :difficulty_level %><br>
     <%= f.text_field :difficulty_level %>
   </p>
-    <%= f.fields_for :quantities do |quantities_form| %>
-      <p>
-        <%= quantities_form.label :quantity %>
-        <%= quantities_form.text_field :quantity %>
-      </p>
-      <p>
-        <%= quantities_form.label :ingredient %>
-        <%= quantities_form.text_field :ingredient_name %>
-      </p>
-    <% end %>
   <p>
     <%= f.label :instructions %><br>
     <%= f.text_area :instructions %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Add ingredients!" %>
   </p>
 <% end %>
