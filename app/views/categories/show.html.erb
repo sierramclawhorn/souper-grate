@@ -1,11 +1,14 @@
-<%= link_to 'Create New Recipe', new_category_recipe_path(@category), class: 'btn btn-warning' %>
+<div class= 'category-show'>
 
+  <%= link_to 'Create New Recipe', new_category_recipe_path(@category), class: 'btn btn-warning create-recipe'   %>
+  
+  
+  <h1 class= 'category-name'><%= @category.name %></h1>
+  
+  <% if @category.recipes.count > 0 %>
+    <ul class= 'category-recipes'>
+      <%= render partial: 'recipe', collection: @category.recipes, locals: { category: @category   } %>
+    </ul>
+  <% end %>
 
-<h1><%= @category.name %></h1>
-
-<% if @category.recipes.count > 0 %>
-  <ul>
-    <%= render partial: 'recipe', collection: @category.recipes, locals: { category: @category } %>
-  </ul>
-<% end %>
-
+</div>
