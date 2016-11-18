@@ -15,4 +15,13 @@ class Recipe < ApplicationRecord
                                                less_than_or_equal_to: 5}
 
   validates :prep_time, numericality: { greater_than_or_equal_to: 1 }
+
+
+  def rating_average
+    sum = self.ratings.reduce(0) { |sum, rating| sum + rating.rating }
+    avg = sum / self.ratings.count.to_f
+    avg.round(1)
+  end
+
+
 end
