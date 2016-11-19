@@ -14,6 +14,11 @@
  *= require_self
  */
 
+ .container{
+  min-width: 320px;
+  width: 75%;
+ }
+
 .banner-img {
   display: block;
   margin: auto;
@@ -43,13 +48,12 @@ h2 a{
 /*HOMEPAGE*/
 .courses{
   margin: auto;
-  width: 60%;
+  width: 80%;
 }
 
 .courses-header{
   margin: 4%;
   text-align: center;
-  margin-bottom: -5px;
 }
 
 .courses li a{
@@ -58,33 +62,54 @@ h2 a{
   text-shadow: .02em .04em .02em white;
 }
 
-.container{
+.contain{
   position: relative;
+
+/*  display: flex;
+  align-items: center;*/
 }
 
-.potato-img{
+/*.potato-img{
   position: absolute;
   margin: auto;
+  margin-top: -65px;
   width: 100%;
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
       box-sizing: border-box;
-}
+}*/
 
 .category{
   position: relative;
   margin: auto;
-  margin-top: 20%;
+  margin-top: 15%;
   margin-left: 30%;
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
       box-sizing: border-box;
-  width: 50%;
-  height: 220px;
+  max-width: 60%;
+  min-width: 20%;
+  height: 230px;
   overflow: auto; /*scrollbar*/
   margin-bottom: 5%;
   padding-left: 5%;
   padding-right: 3%;
+}
+
+.potato{
+  background-image: url('/images/potato.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 135%;
+}
+
+.potato-list{
+  height: 40%;
+  width: 75%;
 }
 
 /*PROFILE PAGE*/
@@ -138,3 +163,18 @@ h2 a{
   list-style: none;
   margin-left: -40px;
 }
+
+
+/*RECIPE SHOW*/
+.recipe-show{
+  max-width: 75%;
+  margin: auto;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.recipe-show a{
+  color: maroon;
+}
+
+

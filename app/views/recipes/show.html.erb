@@ -1,48 +1,53 @@
-<h1><%= @recipe.name %></h1>
+<div class= 'recipe-show'>
 
-Created by: <%= @recipe.user.username %>
-
-<h2>Description</h2>
-<p>
-  <%= @recipe.description %>
-</p><br>
-
-<p>
-  Prep Time: <%= @recipe.prep_time %> min
-</p>
-
-<p>
-  Difficulty Rating: <%= @recipe.difficulty_level %>
-</p><br>
-
-<h2>Ingredients</h2>
-  <ul>
-  <% @recipe.quantities.each do |ingredient| %>
-      <li><%= ingredient.quantity %> <%= ingredient.ingredient_name  %></li>
+  <h1><%= @recipe.name %></h1>
+  
+  Created by: <%= link_to @recipe.user.username, @recipe.user %>
+  
+  <h2>Description</h2>
+  <p>
+    <%= @recipe.description %>
+  </p><br>
+  
+  <p>
+    Prep Time: <%= @recipe.prep_time %> min
+  </p>
+  
+  <p>
+    Difficulty Rating: <%= @recipe.difficulty_level %>
+  </p><br>
+  
+  <h2>Ingredients</h2>
+    <ul>
+    <% @recipe.quantities.each do |ingredient| %>
+        <li><%= ingredient.quantity %> <%= ingredient.ingredient_name %></li>
+    <% end %>
+    </ul>
+  <h2>Directions</h2>
+  <p>
+    <%=raw @recipe.display_directions %>
+  </p>
+  
+  
+  <p>
+    Rating:
+    <% if @recipe.ratings.count > 0 %>
+      <%= @recipe.rating_average %>
+    <% else %>
+      Be the first rate!
+    <% end %>
+  </p>
+  
+  <% if current_user %>
+    <div class="rate">
+      <%= render 'ratings/rate' %>
+    </div>
   <% end %>
-  </ul>
-<h2>Directions</h2>
-<p>
-  <%=raw @recipe.display_directions %>
-</p>
-
-
-<p>
-  Rating:
-  <% if @recipe.ratings.count > 0 %>
-    <%= @recipe.rating_average %>
-  <% else %>
-    Be the first rate!
+  
+  <% if current_user == @recipe.user %> 
+    <%= link_to 'Edit', edit_category_recipe_path(@category, @recipe) %>
+    <%= link_to 'Delete', category_recipe_path, method: :delete, data: { confirm: 'WHYYYY' } %>
   <% end %>
-</p>
 
-<% if current_user %>
-  <div class="rate">
-    <%= render 'ratings/rate' %>
-  </div>
-<% end %>
-
-<% if current_user %> <!-- implement logic for matching current_user to creator of recipe -->
-  <%= link_to 'Edit', edit_category_recipe_path(@category, @recipe) %>
-  <%= link_to 'Delete', category_recipe_path, method: :delete, data: { confirm: 'WHYYYY' } %>
-<% end %>
+</div>
+  
